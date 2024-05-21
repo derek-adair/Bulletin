@@ -21,9 +21,9 @@
 
                     <section class="gh-home-subscribe">
                         <h2 class="gh-home-subscribe-title">Stay tuned</h2>
-                        <p class="gh-home-subscribe-description">Don’t miss out on the latest issues. Sign up now to get access to the library of members-only issues.</p>
+                        <p class="gh-home-subscribe-description">Reviewing indie games weekly.  <br />Don't miss out on the latest episodes. <br/>Receive updates on Fizzle Studios projects</p>
                         <a class="gh-home-subscribe-input" href="#/portal/signup" data-portal="signup">
-                            jamie@example.com <span>{{> icons/arrow-right}}</span>
+                            bob@bobloblaw.com<span>{{> icons/arrow-right}}</span>
                         </a>
                     </section>
 
@@ -38,7 +38,8 @@
                             <img class="gh-home-latest-icon" src="{{@site.icon}}" alt="{{@site.title}}">
                         {{/if}}
 
-                        {{#foreach posts limit="1"}}
+			{{#get "posts" include="tags,author" filter="featured:true" limit="1" as |featured|}}
+			{{#foreach featured}}
                             <article class="gh-article {{post_class}}">
                                 <header class="gh-article-header">
                                     <h2 class="gh-article-title">{{title}}</h2>
@@ -72,14 +73,15 @@
                             </article>
 
                             <footer class="gh-home-latest-footer">
-                                <a class="gh-btn" href="{{url}}">Read latest issue</a>
+                                <a class="gh-btn" href="{{url}}">Read latest update</a>
                             </footer>
-                        {{/foreach}}
+			{{/foreach}}
+                        {{/get}}
                     </section>
 
                     <div class="gh-home-latest-label">
                         <span class="gh-home-latest-indicator"></span>
-                        Latest issue
+                        Latest Update
                     </div>
                 </div>
             </div>
