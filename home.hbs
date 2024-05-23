@@ -38,7 +38,7 @@
                             <img class="gh-home-latest-icon" src="{{@site.icon}}" alt="{{@site.title}}">
                         {{/if}}
 
-			{{#get "posts" include="tags,author" filter="featured:true" limit="1" as |featured|}}
+			{{#get "posts" include="tags,authors" filter="featured:true" limit="1" as |featured|}}
 			{{#foreach featured}}
                             <article class="gh-article {{post_class}}">
                                 <header class="gh-article-header">
